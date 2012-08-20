@@ -1,0 +1,15 @@
+<%= creature_form.simple_fields_for :photos, CreaturePhoto.new do |f| %>
+  <%= field_set_tag nil, class: 'creature-photo-fields row-fluid nested-form-label' do %>
+    <div class="span6">
+      <%= f.label :source %>
+    </div>
+    <div class="span2">
+      <%= f.label :thumb %>
+    </div>
+    <div class="span2">
+      <%= f.label :remove_source %>
+    </div>
+    <div class="span2 actions">
+    </div>
+  <% end %>
+<% end %>

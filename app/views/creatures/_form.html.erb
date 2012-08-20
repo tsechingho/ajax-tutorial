@@ -7,3 +7,24 @@
   <%= f.input :characteristic, input_html: { size: '20x5' } %>
   <%= f.association :animal_handbooks, input_html: { class: 'chzn-select' } %>
 </div>
+
+<h3><%= t('.creature_photos') %></h3>
+<div class="form-inputs form-inline">
+  <%= render 'creature_photos/field_labels', creature_form: f %>
+  <%= f.simple_fields_for :photos do |f2| %>
+    <%= render 'creature_photos/fields', f: f2 %>
+  <% end %>
+</div>
+
+<%= iconed_link_to_add_association t('helpers.add'),
+  f,
+  :photos,
+  data: {
+    :'association-insertion-node' => '.form-inputs.form-inline',
+    :'association-insertion-method' => :append
+  },
+  partial: 'creature_photos/fields',
+  render_options: {
+    locals: { }
+  } %>
+

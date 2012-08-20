@@ -24,6 +24,7 @@ en:
         file_size: 'File size'
         source: 'Photo'
         thumb: 'Thumb'
+        remove_source: 'Remove photo?'
 
   simple_form:
     labels:
