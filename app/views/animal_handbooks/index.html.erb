@@ -4,7 +4,7 @@
   </header>
 
   <%= render_list class: 'nav nav-tabs' do |li|
-    li << [link_to(t('helpers.new'), new_animal_handbook_path), { class: 'action' }]
+    li << [link_to_open_modal(t('helpers.new'), new_animal_handbook_path, '#animal-handbook-modal'), { class: 'action' }]
   end %>
 
   <%= render 'table', animal_handbooks: @animal_handbooks %>
@@ -12,3 +12,5 @@
   <nav role="pagination">
   </nav>
 </article>
+
+<div class="modal hide fade" id="animal-handbook-modal"></div>

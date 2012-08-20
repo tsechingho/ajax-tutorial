@@ -10,6 +10,7 @@ en:
     destroy: 'Destroy'
     are_you_sure: 'Are you sure?'
     actions: 'Actions'
+    close: 'Close'
   site:
     title: 'Ajax Tutorial'
     subtitle: ''

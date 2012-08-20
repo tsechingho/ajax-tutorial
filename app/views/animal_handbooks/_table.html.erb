@@ -8,7 +8,7 @@
       <td><%= animal_handbook.name %></td>
       <td class="btn-group">
         <%= link_to_show animal_handbook_path(animal_handbook) %>
-        <%= link_to_edit edit_animal_handbook_path(animal_handbook) %>
+        <%= link_to_edit_modal edit_animal_handbook_path(animal_handbook), '#animal-handbook-modal' %>
         <%= link_to_destroy animal_handbook_path(animal_handbook) %>
       </td>
     </tr>

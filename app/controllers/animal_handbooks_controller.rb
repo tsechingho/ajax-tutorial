@@ -14,10 +14,13 @@ class AnimalHandbooksController < ApplicationController
   end
 
   def new
-    respond_with @animal_handbook
+    respond_with @animal_handbook do |format|
+      format.html { render 'new_modal', layout: false } if request.xhr?
+    end
   end
 
   def edit
+    render 'edit_modal', layout: false if request.xhr?
   end
 
   def create
@@ -25,7 +28,17 @@ class AnimalHandbooksController < ApplicationController
     if @animal_handbook.valid?
       flash[:notice] = 'Animal handbook was successfully created.'
     end
-    respond_with @animal_handbook
+    respond_with @animal_handbook do |format|
+      format.html {
+        if @animal_handbook.valid?
+          load_animal_handbooks
+          render partial: 'table', locals: { animal_handbooks: @animal_handbooks }
+        else
+          render 'new_modal', layout: false
+        end
+      } if request.xhr?
+    end
+    flash.discard :notice if request.xhr?
   end
 
   def update
@@ -33,12 +46,24 @@ class AnimalHandbooksController < ApplicationController
     if @animal_handbook.valid?
       flash[:notice] = 'Animal handbook was successfully updated.'
     end
-    respond_with @animal_handbook
+    respond_with @animal_handbook do |format|
+      format.html {
+        if @animal_handbook.valid?
+          load_animal_handbooks
+          render partial: 'table', locals: { animal_handbooks: @animal_handbooks }
+        else
+          render 'edit_modal', layout: false
+        end
+      } if request.xhr?
+    end
+    flash.discard :notice if request.xhr?
   end
 
   def destroy
     @animal_handbook.destroy
-    respond_with @animal_handbook, location: animal_handbooks_url
+    respond_with @animal_handbook, location: animal_handbooks_url do |format|
+      format.js { render nothing: true }
+    end
   end
 
   protected

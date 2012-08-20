@@ -9,6 +9,10 @@ en:
     show:
       title: 'Show animal handbook'
       creatures: 'Creatures'
+    new_modal:
+      title: 'New Animal Handbook'
+    edit_modal:
+      title: 'Editing Animal Handbook'
 
   activerecord:
     models:
