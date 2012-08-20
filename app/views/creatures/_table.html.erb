@@ -14,7 +14,7 @@
       <td><%= creature.characteristic %></td>
       <td class="btn-group">
         <%= link_to_show creature_path(creature) %>
-        <%= link_to_edit edit_creature_path(creature) %>
+        <%= link_to_edit_modal edit_creature_path(creature), '#creature-modal' %>
         <%= link_to_destroy creature_path(creature) %>
       </td>
     </tr>

@@ -14,10 +14,13 @@ class CreaturesController < ApplicationController
   end
 
   def new
-    respond_with @creature
+    respond_with @creature do |format|
+      format.html { render 'new_modal', layout: false } if request.xhr?
+    end
   end
 
   def edit
+    render 'edit_modal', layout: false if request.xhr?
   end
 
   def create
@@ -25,7 +28,17 @@ class CreaturesController < ApplicationController
     if @creature.valid?
       flash[:notice] = 'Creature was successfully created.'
     end
-    respond_with @creature
+    respond_with @creature do |format|
+      format.html {
+        if @creature.valid?
+          load_creatures
+          render partial: 'table', locals: { creatures: @creatures }
+        else
+          render 'new_modal', layout: false
+        end
+      } if request.xhr?
+    end
+    flash.discard :notice if request.xhr?
   end
 
   def update
@@ -33,12 +46,24 @@ class CreaturesController < ApplicationController
     if @creature.valid?
       flash[:notice] = 'Creature was successfully updated.'
     end
-    respond_with @creature
+    respond_with @creature do |format|
+      format.html {
+        if @creature.valid?
+          load_creatures
+          render partial: 'table', locals: { creatures: @creatures }
+        else
+          render 'edit_modal', layout: false
+        end
+      } if request.xhr?
+    end
+    flash.discard :notice if request.xhr?
   end
 
   def destroy    
     @creature.destroy
-    respond_with @creature, location: creatures_url
+    respond_with @creature, location: creatures_url do |format|
+      format.js { render nothing: true }
+    end
   end
 
   protected
