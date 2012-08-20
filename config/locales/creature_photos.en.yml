@@ -8,6 +8,10 @@ en:
       title: 'New creature_photo'
     show:
       title: 'Show creature_photo'
+    new_modal:
+      title: 'New Creature Photo'
+    edit_modal:
+      title: 'Editing Creature Photo'
 
   activerecord:
     models:

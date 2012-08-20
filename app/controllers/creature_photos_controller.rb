@@ -14,10 +14,13 @@ class CreaturePhotosController < ApplicationController
   end
 
   def new
-    respond_with @creature_photo
+    respond_with @creature_photo do |format|
+      format.html { render 'new_modal', layout: false } if request.xhr?
+    end
   end
 
   def edit
+    render 'edit_modal', layout: false if request.xhr?
   end
 
   def create
@@ -25,7 +28,17 @@ class CreaturePhotosController < ApplicationController
     if @creature_photo.valid?
       flash[:notice] = 'Creature photo was successfully created.'
     end
-    respond_with @creature_photo
+    respond_with @creature_photo do |format|
+      format.html {
+        if @creature_photo.valid?
+          load_creature_photos
+          render partial: 'table', locals: { creature_photos: @creature_photos }
+        else
+          render 'new_modal', layout: false
+        end
+      } if request.xhr?
+    end
+    flash.discard :notice if request.xhr?
   end
 
   def update
@@ -33,12 +46,24 @@ class CreaturePhotosController < ApplicationController
     if @creature_photo.valid?
       flash[:notice] = 'Creature photo was successfully updated.'
     end
-    respond_with @creature_photo
+    respond_with @creature_photo do |format|
+      format.html {
+        if @creature_photo.valid?
+          load_creature_photos
+          render partial: 'table', locals: { creature_photos: @creature_photos }
+        else
+          render 'edit_modal', layout: false
+        end
+      } if request.xhr?
+    end
+    flash.discard :notice if request.xhr?
   end
 
   def destroy    
     @creature_photo.destroy
-    respond_with @creature_photo, location: creature_photos_url
+    respond_with @creature_photo, location: creature_photos_url do |format|
+      format.js { render nothing: true }
+    end
   end
 
   protected

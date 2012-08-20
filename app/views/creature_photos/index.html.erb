@@ -4,7 +4,7 @@
   </header>
 
   <%= render_list class: 'nav nav-tabs' do |li|
-    li << [link_to(t('helpers.new'), new_creature_photo_path), { class: 'action' }]
+    li << [link_to_open_modal(t('helpers.new'), new_creature_photo_path, '#creature-photo-modal'), { class: 'action' }]
   end %>
 
   <%= render 'table', creature_photos: @creature_photos %>
@@ -12,3 +12,5 @@
   <nav role="pagination">
   </nav>
 </article>
+
+<div class="modal hide fade" id="creature-photo-modal"></div>

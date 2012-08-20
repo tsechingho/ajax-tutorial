@@ -16,7 +16,7 @@
       <td><%= image_tag(creature_photo.source.thumb.url) if creature_photo.source? %></td>
       <td class="btn-group">
         <%= link_to_show creature_photo_path(creature_photo) %>
-        <%= link_to_edit edit_creature_photo_path(creature_photo) %>
+        <%= link_to_edit_modal edit_creature_photo_path(creature_photo), '#creature-photo-modal' %>
         <%= link_to_destroy creature_photo_path(creature_photo) %>
       </td>
     </tr>
