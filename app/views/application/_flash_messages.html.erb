@@ -1,0 +1,11 @@
+<header class="hidden">
+  <h5><%= t('.title') %></h5>
+</header>
+
+<div class="messages">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, class: "alert alert-#{key} #{key}") do
+      link_to('&times;'.html_safe, '#', class: 'close', :'data-dismiss' => 'alert') << value
+    end %>
+  <% end %>
+</div>

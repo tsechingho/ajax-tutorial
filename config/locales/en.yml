@@ -2,4 +2,17 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  site:
+    title: 'Ajax Tutorial'
+    subtitle: ''
+    proprietor: '<a href="https://github.com/tsechingho">Tse-Ching Ho</a>'
+    company: '<a href="http://ruby.tw/">Ruby Taiwan</a>'
+  application:
+    main_navigation:
+      title: 'Main navigation'
+    flash_messages:
+      title: 'Flash messages'
+    footer:
+      title: 'Footer navigation'
+      copyright: 'Copyright &copy; %{from} - %{to} - %{proprietor} - %{company} - All Rights Reserved.'
+      copyright_from: '2012'

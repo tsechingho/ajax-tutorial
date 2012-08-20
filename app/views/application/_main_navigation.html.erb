@@ -1,0 +1,10 @@
+<header class="hidden">
+  <h5><%= t('.title') %></h5>
+</header>
+
+<div class="nav-collapse">
+  <%= render_list role: 'main-navigation', class: 'nav' do |li|
+    li << link_to(t('.animal_handbooks'), animal_handbooks_path)
+    li << link_to(t('.creatures'), creatures_path)
+  end %>
+</div>

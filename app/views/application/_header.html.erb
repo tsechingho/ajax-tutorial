@@ -1,0 +1,15 @@
+<hgroup id="site-name">
+  <h1><%= link_to t('site.title'), root_url, class: 'brand', rel: 'popover', title: t('site.title') %></h1>
+  <h2><%= t('site.subtitle') %></h2>
+</hgroup>
+
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</a>
+
+<nav role="main-navigation" id="main-navigation">
+  <%= render 'main_navigation' %>
+</nav>
+

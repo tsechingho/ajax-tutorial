@@ -1,0 +1,8 @@
+<header class="hidden">
+  <h5><%= t('.title') %></h5>
+</header>
+
+<div>
+  <p><%= t('.copyright', from: t('.copyright_from'), to: Time.zone.now.year, proprietor: t('site.proprietor'), company: t('site.company')).html_safe %></p>
+</div>
+
