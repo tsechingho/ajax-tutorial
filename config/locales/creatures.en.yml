@@ -18,6 +18,7 @@ en:
         scientific_name: 'Scientific name'
         place_of_origin: 'Place of origin'
         characteristic: 'Characteristic'
+        animal_handbooks: 'Animal handbooks'
 
   simple_form:
     labels:

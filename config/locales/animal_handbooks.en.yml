@@ -8,6 +8,7 @@ en:
       title: 'New animal handbook'
     show:
       title: 'Show animal handbook'
+      creatures: 'Creatures'
 
   activerecord:
     models:
@@ -15,6 +16,7 @@ en:
     attributes:
       animal_handbook:
         name: 'Name'
+        creatures: 'Creatures'
 
   simple_form:
     labels:

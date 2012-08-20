@@ -17,3 +17,8 @@
   <b><%= Creature.human_attribute_name :characteristic %>:</b>
   <%= creature.characteristic %>
 </p>
+
+<p>
+  <b><%= Creature.human_attribute_name :animal_handbooks %>:</b>
+  <%= creature.animal_handbooks.map(&:name).join(', ') %>
+</p>

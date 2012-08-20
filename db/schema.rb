@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120820082010) do
+ActiveRecord::Schema.define(:version => 20120820095555) do
+
+  create_table "animal_handbook_creatures", :force => true do |t|
+    t.integer  "animal_handbook_id"
+    t.integer  "creature_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "animal_handbook_creatures", ["animal_handbook_id"], :name => "index_animal_handbook_creatures_on_animal_handbook_id"
+  add_index "animal_handbook_creatures", ["creature_id"], :name => "index_animal_handbook_creatures_on_creature_id"
 
   create_table "animal_handbooks", :force => true do |t|
     t.string   "name"

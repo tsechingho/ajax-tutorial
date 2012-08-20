@@ -9,6 +9,8 @@
   end %>
 
   <div>
+    <h3><%= t('.creatures') %></h3>
+    <%= render 'creatures/table', creatures: @animal_handbook.creatures %>
   </div>
 
   <footer>
