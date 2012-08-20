@@ -15,5 +15,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require chosen-jquery
+//= require cocoon
 //= require modal
 //= require_tree .
