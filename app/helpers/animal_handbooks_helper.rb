@@ -1,0 +1,2 @@
+module AnimalHandbooksHelper
+end
