@@ -1,0 +1,18 @@
+<%= animal_handbook_form.simple_fields_for :creatures, Creature.new do |f| %>
+  <%= field_set_tag nil, class: 'creature-fields row-fluid nested-form-label' do %>
+    <div class="span2">
+      <%= f.label :popular_name %>
+    </div>
+    <div class="span2">
+      <%= f.label :scientific_name %>
+    </div>
+    <div class="span2">
+      <%= f.label :place_of_origin %>
+    </div>
+    <div class="span4">
+      <%= f.label :characteristic %>
+    </div>
+    <div class="span2 actions">
+    </div>
+  <% end %>
+<% end %>

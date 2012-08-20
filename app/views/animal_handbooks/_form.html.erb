@@ -2,5 +2,25 @@
 
 <div class="form-inputs">
   <%= f.input :name %>
-  <%= f.association :creatures, input_html: { class: 'chzn-select' } %>
 </div>
+
+<h3><%= t('.creatures') %></h3>
+<div class="form-inputs form-inline">
+  <%= render 'creatures/field_labels', animal_handbook_form: f %>
+  <%= f.simple_fields_for :creatures do |f2| %>
+    <%= render 'creatures/fields', f: f2 %>
+  <% end %>
+</div>
+
+<%= iconed_link_to_add_association t('helpers.add'),
+  f,
+  :creatures,
+  data: {
+    :'association-insertion-node' => '.form-inputs.form-inline',
+    :'association-insertion-method' => :append
+  },
+  partial: 'creatures/fields',
+  render_options: {
+    locals: { }
+  } %>
+

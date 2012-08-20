@@ -13,6 +13,8 @@ en:
       title: 'New Animal Handbook'
     edit_modal:
       title: 'Editing Animal Handbook'
+    form:
+      creatures: 'Creatures'
 
   activerecord:
     models:

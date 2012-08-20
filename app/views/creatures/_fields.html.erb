@@ -1,0 +1,9 @@
+<%= field_set_tag nil, class: 'creature-fields row-fluid nested-form-hidden-label nested-fields' do %>
+  <%= f.input :popular_name, wrapper_html: { class: 'span2' }, input_html: { class: 'span12' } %>
+  <%= f.input :scientific_name, wrapper_html: { class: 'span2' }, input_html: { class: 'span12' } %>
+  <%= f.input :place_of_origin, wrapper_html: { class: 'span2' }, input_html: { class: 'span12' } %>
+  <%= f.input :characteristic, as: :string, wrapper_html: { class: 'span4' }, input_html: { class: 'span12' } %>
+  <div class="control-group actions span2">
+    <%= iconed_link_to_remove_association nil, f %>
+  </div>
+<% end %>
