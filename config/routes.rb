@@ -1,4 +1,6 @@
 AjaxTutorial::Application.routes.draw do
+  root to: 'animal_handbooks#index'
+
   resources :creatures
 
   resources :animal_handbooks
