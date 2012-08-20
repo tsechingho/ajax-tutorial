@@ -20,6 +20,7 @@ end
 
 # Javacript libs
 gem 'jquery-rails'
+gem 'chosen-rails'
 
 # Stylesheet libs
 gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
