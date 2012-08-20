@@ -16,5 +16,8 @@
 //= require bootstrap
 //= require chosen-jquery
 //= require cocoon
+// Since XMLHttpRequest (AJAX) standard has no support for file uploads,
+// use iframe-transport method of remotipart gem for ajax file upload.
+//= require jquery.remotipart
 //= require modal
 //= require_tree .
