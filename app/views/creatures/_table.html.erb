@@ -1,0 +1,22 @@
+<table class="table table-striped table-bordered">
+  <tr>
+    <th><%= Creature.human_attribute_name :popular_name %></th>
+    <th><%= Creature.human_attribute_name :scientific_name %></th>
+    <th><%= Creature.human_attribute_name :place_of_origin %></th>
+    <th><%= Creature.human_attribute_name :characteristic %></th>
+    <th><%= t('helpers.actions') %></th>
+  </tr>
+  <% creatures.each do |creature| %>
+    <tr>
+      <td><%= creature.popular_name %></td>
+      <td><%= creature.scientific_name %></td>
+      <td><%= creature.place_of_origin %></td>
+      <td><%= creature.characteristic %></td>
+      <td class="btn-group">
+        <%= link_to_show creature_path(creature) %>
+        <%= link_to_edit edit_creature_path(creature) %>
+        <%= link_to_destroy creature_path(creature) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

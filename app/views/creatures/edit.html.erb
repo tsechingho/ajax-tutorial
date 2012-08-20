@@ -1,6 +1,22 @@
-<h1>Editing creature</h1>
+<article>
+  <header>
+    <h1><%= t('.title') %></h1>
+  </header>
 
-<%= render 'form' %>
+  <%= render_list class: 'nav nav-tabs' do |li|
+    li << [link_to(t('helpers.index'), creatures_path), { class: 'action' }]
+    li << [link_to(t('helpers.show'), @creature), { class: 'action' }]
+  end %>
 
-<%= link_to 'Show', @creature %> |
-<%= link_to 'Back', creatures_path %>
+  <div>
+    <%= simple_form_for @creature, html: { class: 'form-horizontal' } do |f| %>
+      <%= render 'form', f: f %>
+      <div class="form-actions">
+        <%= f.button :submit, name: nil, class: 'btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+
+  <footer>
+  </footer>
+</article>

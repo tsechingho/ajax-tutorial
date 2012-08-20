@@ -1,29 +1,14 @@
-<h1>Listing creatures</h1>
+<article id="creature-list">
+  <header>
+    <h1><%= t('.title') %></h1>
+  </header>
 
-<table>
-  <tr>
-    <th>Popular name</th>
-    <th>Scientific name</th>
-    <th>Place of origin</th>
-    <th>Characteristic</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <%= render_list class: 'nav nav-tabs' do |li|
+    li << [link_to(t('helpers.new'), new_creature_path), { class: 'action' }]
+  end %>
 
-<% @creatures.each do |creature| %>
-  <tr>
-    <td><%= creature.popular_name %></td>
-    <td><%= creature.scientific_name %></td>
-    <td><%= creature.place_of_origin %></td>
-    <td><%= creature.characteristic %></td>
-    <td><%= link_to 'Show', creature %></td>
-    <td><%= link_to 'Edit', edit_creature_path(creature) %></td>
-    <td><%= link_to 'Destroy', creature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <%= render 'table', creatures: @creatures %>
 
-<br />
-
-<%= link_to 'New Creature', new_creature_path %>
+  <nav role="pagination">
+  </nav>
+</article>

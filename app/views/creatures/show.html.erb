@@ -1,25 +1,17 @@
-<p id="notice"><%= notice %></p>
+<article>
+  <header>
+    <h1><%= @creature.popular_name %></h1>
+  </header>
 
-<p>
-  <b>Popular name:</b>
-  <%= @creature.popular_name %>
-</p>
+  <%= render_list class: 'nav nav-tabs' do |li|
+    li << [link_to(t('helpers.index'), creatures_path), { class: 'action' }]
+    li << [link_to(t('helpers.edit'), [:edit, @creature]), { class: 'action' }]
+  end %>
 
-<p>
-  <b>Scientific name:</b>
-  <%= @creature.scientific_name %>
-</p>
+  <div>
+    <%= render 'creature', creature: @creature %>
+  </div>
 
-<p>
-  <b>Place of origin:</b>
-  <%= @creature.place_of_origin %>
-</p>
-
-<p>
-  <b>Characteristic:</b>
-  <%= @creature.characteristic %>
-</p>
-
-
-<%= link_to 'Edit', edit_creature_path(@creature) %> |
-<%= link_to 'Back', creatures_path %>
+  <footer>
+  </footer>
+</article>

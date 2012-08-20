@@ -1,83 +1,57 @@
 class CreaturesController < ApplicationController
-  # GET /creatures
-  # GET /creatures.json
+  before_filter :load_creatures, only: [:index]
+  before_filter :load_creature, only: [:show, :edit, :update, :destroy]
+  before_filter :new_creature, only: [:new, :create]
+
+  respond_to :html
+
   def index
-    @creatures = Creature.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @creatures }
-    end
+    respond_with @creatures
   end
 
-  # GET /creatures/1
-  # GET /creatures/1.json
   def show
-    @creature = Creature.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @creature }
-    end
+    respond_with @creature
   end
 
-  # GET /creatures/new
-  # GET /creatures/new.json
   def new
-    @creature = Creature.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @creature }
-    end
+    respond_with @creature
   end
 
-  # GET /creatures/1/edit
   def edit
-    @creature = Creature.find(params[:id])
   end
 
-  # POST /creatures
-  # POST /creatures.json
   def create
-    @creature = Creature.new(params[:creature])
-
-    respond_to do |format|
-      if @creature.save
-        format.html { redirect_to @creature, notice: 'Creature was successfully created.' }
-        format.json { render json: @creature, status: :created, location: @creature }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @creature.errors, status: :unprocessable_entity }
-      end
+    @creature.save
+    if @creature.valid?
+      flash[:notice] = 'Creature was successfully created.'
     end
+    respond_with @creature
   end
 
-  # PUT /creatures/1
-  # PUT /creatures/1.json
   def update
-    @creature = Creature.find(params[:id])
-
-    respond_to do |format|
-      if @creature.update_attributes(params[:creature])
-        format.html { redirect_to @creature, notice: 'Creature was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @creature.errors, status: :unprocessable_entity }
-      end
+    @creature.update_attributes params[:creature]
+    if @creature.valid?
+      flash[:notice] = 'Creature was successfully updated.'
     end
+    respond_with @creature
   end
 
-  # DELETE /creatures/1
-  # DELETE /creatures/1.json
-  def destroy
-    @creature = Creature.find(params[:id])
+  def destroy    
     @creature.destroy
+    respond_with @creature, location: creatures_url
+  end
 
-    respond_to do |format|
-      format.html { redirect_to creatures_url }
-      format.json { head :no_content }
-    end
+  protected
+
+  def load_creatures
+    @creatures = Creature.all
+  end
+
+  def load_creature
+    @creature = Creature.find params[:id]
+  end
+
+  def new_creature
+    @creature = Creature.new params[:creature]
   end
 end

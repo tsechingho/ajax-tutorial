@@ -1,0 +1,34 @@
+en:
+  creatures:
+    edit:
+      title: 'Editing creature'
+    index:
+      title: 'Listing creatures'
+    new:
+      title: 'New creature'
+    show:
+      title: 'Show creature'
+
+  activerecord:
+    models:
+      creature: 'Creature'
+    attributes:
+      creature:
+        popular_name: 'Popular name'
+        scientific_name: 'Scientific name'
+        place_of_origin: 'Place of origin'
+        characteristic: 'Characteristic'
+
+  simple_form:
+    labels:
+      creature:
+    hints:
+      creature:
+    placeholders:
+      creature:
+
+  helpers:
+    submit:
+      creature:
+        create: 'Create %{model}'
+        update: 'Update %{model}'
