@@ -22,6 +22,7 @@ end
 gem 'jquery-rails'
 gem 'chosen-rails'
 gem 'cocoon'
+gem 'remotipart'
 
 # Stylesheet libs
 gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
