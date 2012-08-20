@@ -4,6 +4,7 @@
     <th><%= CreaturePhoto.human_attribute_name :content_type %></th>
     <th><%= CreaturePhoto.human_attribute_name :file_name %></th>
     <th><%= CreaturePhoto.human_attribute_name :file_size %></th>
+    <th><%= CreaturePhoto.human_attribute_name :thumb %></th>
     <th><%= t('helpers.actions') %></th>
   </tr>
   <% creature_photos.each do |creature_photo| %>
@@ -12,6 +13,7 @@
       <td><%= creature_photo.content_type %></td>
       <td><%= creature_photo.file_name %></td>
       <td><%= creature_photo.file_size %></td>
+      <td><%= image_tag(creature_photo.source.thumb.url) if creature_photo.source? %></td>
       <td class="btn-group">
         <%= link_to_show creature_photo_path(creature_photo) %>
         <%= link_to_edit edit_creature_photo_path(creature_photo) %>

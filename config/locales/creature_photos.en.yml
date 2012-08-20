@@ -18,6 +18,8 @@ en:
         content_type: 'Content type'
         file_name: 'File name'
         file_size: 'File size'
+        source: 'Photo'
+        thumb: 'Thumb'
 
   simple_form:
     labels:
