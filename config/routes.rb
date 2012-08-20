@@ -1,9 +1,8 @@
 AjaxTutorial::Application.routes.draw do
   root to: 'animal_handbooks#index'
-
-  resources :creatures
-
   resources :animal_handbooks
+  resources :creatures
+  resources :creature_photos
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

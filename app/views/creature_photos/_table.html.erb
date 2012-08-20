@@ -1,0 +1,22 @@
+<table class="table table-striped table-bordered">
+  <tr>
+    <th><%= CreaturePhoto.human_attribute_name :creature %></th>
+    <th><%= CreaturePhoto.human_attribute_name :content_type %></th>
+    <th><%= CreaturePhoto.human_attribute_name :file_name %></th>
+    <th><%= CreaturePhoto.human_attribute_name :file_size %></th>
+    <th><%= t('helpers.actions') %></th>
+  </tr>
+  <% creature_photos.each do |creature_photo| %>
+    <tr>
+      <td><%= creature_photo.creature.name %></td>
+      <td><%= creature_photo.content_type %></td>
+      <td><%= creature_photo.file_name %></td>
+      <td><%= creature_photo.file_size %></td>
+      <td class="btn-group">
+        <%= link_to_show creature_photo_path(creature_photo) %>
+        <%= link_to_edit edit_creature_photo_path(creature_photo) %>
+        <%= link_to_destroy creature_photo_path(creature_photo) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

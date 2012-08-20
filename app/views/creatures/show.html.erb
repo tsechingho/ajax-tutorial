@@ -10,6 +10,8 @@
 
   <div>
     <%= render 'creature', creature: @creature %>
+    <h3><%= t('.photos') %></h3>
+    <%= render 'creature_photos/table', creature_photos: @creature.photos %>
   </div>
 
   <footer>

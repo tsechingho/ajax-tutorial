@@ -8,6 +8,7 @@ en:
       title: 'New creature'
     show:
       title: 'Show creature'
+      photos: 'Photos'
 
   activerecord:
     models:

@@ -1,0 +1,35 @@
+en:
+  creature_photos:
+    edit:
+      title: 'Editing creature photo'
+    index:
+      title: 'Listing creature photos'
+    new:
+      title: 'New creature_photo'
+    show:
+      title: 'Show creature_photo'
+
+  activerecord:
+    models:
+      creature_photo: 'Creature Photo'
+    attributes:
+      creature_photo:
+        creature: 'Creature'
+        content_type: 'Content type'
+        file_name: 'File name'
+        file_size: 'File size'
+
+  simple_form:
+    labels:
+      creature_photo:
+        remove_source: 'Remove photo?'
+    hints:
+      creature_photo:
+    placeholders:
+      creature_photo:
+
+  helpers:
+    submit:
+      creature_photo:
+        create: 'Create %{model}'
+        update: 'Update %{model}'

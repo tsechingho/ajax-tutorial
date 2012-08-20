@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120820095555) do
+ActiveRecord::Schema.define(:version => 20120820105017) do
 
   create_table "animal_handbook_creatures", :force => true do |t|
     t.integer  "animal_handbook_id"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(:version => 20120820095555) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "creature_photos", :force => true do |t|
+    t.integer  "creature_id"
+    t.string   "content_type"
+    t.string   "file_name"
+    t.integer  "file_size"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "creature_photos", ["creature_id"], :name => "index_creature_photos_on_creature_id"
 
   create_table "creatures", :force => true do |t|
     t.string   "popular_name"

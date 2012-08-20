@@ -20,6 +20,7 @@ en:
       title: 'Main navigation'
       animal_handbooks: 'Animal Handbooks'
       creatures: 'Creatures'
+      creature_photos: 'Creature Photos'
     flash_messages:
       title: 'Flash messages'
     footer:
