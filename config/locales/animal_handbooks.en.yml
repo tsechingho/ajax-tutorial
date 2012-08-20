@@ -1,0 +1,31 @@
+en:
+  animal_handbooks:
+    edit:
+      title: 'Editing animal handbook'
+    index:
+      title: 'Listing animal handbooks'
+    new:
+      title: 'New animal handbook'
+    show:
+      title: 'Show animal handbook'
+
+  activerecord:
+    models:
+      animal_handbook: 'Animal Handbook'
+    attributes:
+      animal_handbook:
+        name: 'Name'
+
+  simple_form:
+    labels:
+      animal_handbook:
+    hints:
+      animal_handbook:
+    placeholders:
+      animal_handbook:
+
+  helpers:
+    submit:
+      animal_handbook:
+        create: 'Create %{model}'
+        update: 'Update %{model}'

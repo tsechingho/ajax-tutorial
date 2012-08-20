@@ -1,10 +1,16 @@
-<p id="notice"><%= notice %></p>
+<article>
+  <header>
+    <h1><%= @animal_handbook.name %></h1>
+  </header>
 
-<p>
-  <b>Name:</b>
-  <%= @animal_handbook.name %>
-</p>
+  <%= render_list class: 'nav nav-tabs' do |li|
+    li << [link_to(t('helpers.index'), animal_handbooks_path), { class: 'action' }]
+    li << [link_to(t('helpers.edit'), [:edit, @animal_handbook]), { class: 'action' }]
+  end %>
 
+  <div>
+  </div>
 
-<%= link_to 'Edit', edit_animal_handbook_path(@animal_handbook) %> |
-<%= link_to 'Back', animal_handbooks_path %>
+  <footer>
+  </footer>
+</article>

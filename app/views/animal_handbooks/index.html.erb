@@ -1,23 +1,14 @@
-<h1>Listing animal_handbooks</h1>
+<article id="animal-handbook-list">
+  <header>
+    <h1><%= t('.title') %></h1>
+  </header>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <%= render_list class: 'nav nav-tabs' do |li|
+    li << [link_to(t('helpers.new'), new_animal_handbook_path), { class: 'action' }]
+  end %>
 
-<% @animal_handbooks.each do |animal_handbook| %>
-  <tr>
-    <td><%= animal_handbook.name %></td>
-    <td><%= link_to 'Show', animal_handbook %></td>
-    <td><%= link_to 'Edit', edit_animal_handbook_path(animal_handbook) %></td>
-    <td><%= link_to 'Destroy', animal_handbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <%= render 'table', animal_handbooks: @animal_handbooks %>
 
-<br />
-
-<%= link_to 'New Animal handbook', new_animal_handbook_path %>
+  <nav role="pagination">
+  </nav>
+</article>

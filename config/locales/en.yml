@@ -18,6 +18,7 @@ en:
   application:
     main_navigation:
       title: 'Main navigation'
+      animal_handbooks: 'Animal Handbooks'
     flash_messages:
       title: 'Flash messages'
     footer:
