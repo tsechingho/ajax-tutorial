@@ -2,6 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  helpers:
+    index: 'Index'
+    show: 'Show'
+    new: 'New'
+    edit: 'Edit'
+    destroy: 'Destroy'
+    are_you_sure: 'Are you sure?'
+    actions: 'Actions'
   site:
     title: 'Ajax Tutorial'
     subtitle: ''
