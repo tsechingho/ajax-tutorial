@@ -1,0 +1,29 @@
+<h1>Listing creatures</h1>
+
+<table>
+  <tr>
+    <th>Popular name</th>
+    <th>Scientific name</th>
+    <th>Place of origin</th>
+    <th>Characteristic</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @creatures.each do |creature| %>
+  <tr>
+    <td><%= creature.popular_name %></td>
+    <td><%= creature.scientific_name %></td>
+    <td><%= creature.place_of_origin %></td>
+    <td><%= creature.characteristic %></td>
+    <td><%= link_to 'Show', creature %></td>
+    <td><%= link_to 'Edit', edit_creature_path(creature) %></td>
+    <td><%= link_to 'Destroy', creature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Creature', new_creature_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Popular name:</b>
+  <%= @creature.popular_name %>
+</p>
+
+<p>
+  <b>Scientific name:</b>
+  <%= @creature.scientific_name %>
+</p>
+
+<p>
+  <b>Place of origin:</b>
+  <%= @creature.place_of_origin %>
+</p>
+
+<p>
+  <b>Characteristic:</b>
+  <%= @creature.characteristic %>
+</p>
+
+
+<%= link_to 'Edit', edit_creature_path(@creature) %> |
+<%= link_to 'Back', creatures_path %>

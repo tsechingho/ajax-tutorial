@@ -1,4 +1,6 @@
 AjaxTutorial::Application.routes.draw do
+  resources :creatures
+
   resources :animal_handbooks
 
   # The priority is based upon order of creation:
