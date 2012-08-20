@@ -64,5 +64,18 @@ module AjaxTutorial
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.generators do |g|
+      g.orm :active_record
+      g.test_framework :rspec
+      g.view_specs false
+      g.helper_specs false
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+      g.assets stylesheet_engine: :sass
+      g.scaffold stylesheet_engine: :sass,
+                 stylesheets: false,
+                 assets: false,
+                 helper: false
+    end
   end
 end
